@@ -1,0 +1,22 @@
+.navbar .title {
+  margin-top: 15rpx;
+  color: #666;
+  font-size: 28rpx;
+}
+
+.navbar .main {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar .main .hearted {
+  margin-top: 10rpx;
+  font-size: 28rpx;
+}
+
+.navbar .main .more {
+  font-size: 22rpx;
+  border: 1rpx solid;
+  border-radius: 20rpx;
+  padding: 10rpx 20rpx;
+}

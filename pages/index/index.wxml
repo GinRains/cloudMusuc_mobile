@@ -1,0 +1,41 @@
+<view class="indexContainter">
+  <!-- banner区 -->
+  <swiper class="navBanner" indicator-dots circular indicator-color="#fff" indicator-active-color="#d43c33" autoplay>
+    <swiper-item class="banner-item" wx:for="{{bannerList}}" wx:key="bannerId">
+      <image src="{{item.pic}}"></image>
+    </swiper-item>
+  </swiper>
+  <!-- navbar -->
+  <view class="navbar">
+    <view class="bar-item">
+      <text class="iconfont icon-meirituijian-"></text>
+      <text class="barTitle">每日推荐</text>
+    </view>
+    <view class="bar-item">
+      <text class="iconfont icon-gedan1"></text>
+      <text class="barTitle">歌单</text>
+    </view>
+    <view class="bar-item">
+      <text class="iconfont icon-icon-ranking"></text>
+      <text class="barTitle">排行榜</text>
+    </view>
+    <view class="bar-item">
+      <text class="iconfont icon-diantai"></text>
+      <text class="barTitle">电台</text>
+    </view>
+    <view class="bar-item">
+      <text class="iconfont icon-zhiboguankanliangbofangsheyingshexiangjixianxing"></text>
+      <text class="barTitle">直播</text>
+    </view>
+  </view>
+  <!-- 推荐区 -->
+  <view class="recommendWrap">
+    <NavBar title="推荐歌曲" content="为你精心推荐"/>
+    <scroll-view class="recommendMain" enable-flex scroll-x>
+      <view class="recommend-item" wx:for="{{songList}}" wx:key="id">
+        <image src="{{item.picUrl}}"></image>
+        <text class="recommend-txt">{{item.name}}</text>
+      </view>
+    </scroll-view>
+  </view>
+</view>

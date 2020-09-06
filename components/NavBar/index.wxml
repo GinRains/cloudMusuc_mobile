@@ -1,0 +1,7 @@
+<view class="navbar">
+  <text class="title">{{title}}</text>
+  <view class="main">
+    <text class="hearted">{{content}}</text>
+    <text class="more">查看更多</text>
+  </view>
+</view>

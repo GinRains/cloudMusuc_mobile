@@ -1,0 +1,71 @@
+/* pages/index/index.wxss */
+@import '/static/iconfont/iconfont.wxss';
+.indexContainter {
+  height: 100%;
+  background-color: #eee;
+}
+
+.indexContainter .navBanner .banner-item image {
+  width: 100%; height: 100%;
+}
+
+.indexContainter .navbar {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 16rpx;
+  background-color: #fff;
+}
+
+.indexContainter .navbar .bar-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.indexContainter .navbar .bar-item .iconfont {
+  margin: 20rpx 0;
+  background-color: rgb(240, 19, 19); color: white;
+  width: 100rpx; height: 100rpx;
+  border-radius: 50%;
+  text-align: center; line-height: 100rpx;
+  font-size: 48rpx;
+}
+
+.indexContainter .navbar .bar-item .barTitle {
+  font-size: 28rpx;
+}
+
+.indexContainter .recommendWrap {
+  padding: 0 20rpx;
+  padding-top: 20rpx;
+  margin-top: 20rpx;
+  background-color: #fff;
+}
+
+.indexContainter .recommendWrap .recommendMain {
+  display: flex;
+  height: 340rpx;
+}
+
+.indexContainter .recommendWrap .recommendMain .recommend-item {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20rpx;
+  margin-right: 10rpx;
+  width: 200rpx;
+}
+
+.indexContainter .recommendWrap .recommendMain .recommend-item image {
+  width: 200rpx; height: 200rpx;
+  border-radius: 12rpx;
+}
+
+.indexContainter .recommendWrap .recommendMain .recommend-item .recommend-txt {
+  margin-top: 8rpx;
+  font-size: 30rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
