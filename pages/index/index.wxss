@@ -1,5 +1,4 @@
 /* pages/index/index.wxss */
-@import '/static/iconfont/iconfont.wxss';
 .indexContainter {
   height: 100%;
   background-color: #eee;
@@ -68,4 +67,51 @@
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+}
+
+.rankingWrap {
+  margin-top: 20rpx; padding: 0 20rpx;
+  background-color: #fff;
+}
+
+.rankingWrap .rankingList {
+  width: 100%; height: 430rpx;
+}
+
+.rankingWrap .rankingList .ranking-item {
+  width: 96%;
+  /* background-color: #fbfbfb; */
+  border-radius: 18rpx;
+}
+
+.rankingWrap .rankingList .ranking-item .rankingTitle {
+  margin-bottom: 10rpx;
+  font-size: 26rpx;
+}
+
+.rankingWrap .rankingList .ranking-item .rankingContent {
+  display: flex;
+  align-items: center;
+}
+
+.rankingWrap .rankingList .ranking-item .rankingContent .rankingSort {
+  flex-shrink: 0;
+  width: 100rpx; height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+}
+
+.rankingWrap .rankingList .ranking-item .rankingContent .rankingImg {
+  flex-shrink: 0;
+  margin: 8rpx 0;
+  margin-right: 20rpx;
+  width: 100rpx; height: 100rpx;
+  border-radius: 10rpx;
+  
+}
+
+.rankingWrap .rankingList .ranking-item .rankingContent .rankingName {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }

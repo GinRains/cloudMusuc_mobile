@@ -38,4 +38,18 @@
       </view>
     </scroll-view>
   </view>
+  <!-- 排行榜区域 -->
+  <view class="rankingWrap">
+    <NavBar title="排行榜" content="热歌风向标"/>
+    <swiper class="rankingList" next-margin="40rpx">
+      <swiper-item class="ranking-item" wx:for="{{rankingList}}" wx:key="id">
+        <view class="rankingTitle">{{item.name}} ></view>
+        <view class="rankingContent" wx:for="{{item.musicList}}" wx:key="id" wx:for-item="musicItem" wx:for-index="musicIndex">
+          <text class="rankingSort">{{musicIndex + 1}}</text>
+          <image class="rankingImg" src="{{musicItem.al.picUrl}}"></image>
+          <text class="rankingName">{{musicItem.al.name}}</text>
+        </view>
+      </swiper-item>
+    </swiper>
+  </view>
 </view>

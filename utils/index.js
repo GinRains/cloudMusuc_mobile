@@ -9,7 +9,7 @@ export default function request (url, data={}, method="GET") {
       success: res => {
         if(res.data.code === 200) {
           resolve(res.data)
-        }else reject("数据获取失败！")
+        }else reject(res)
       }
     })
   })

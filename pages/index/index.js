@@ -8,7 +8,8 @@ Page({
    */
   data: {
     bannerList: [],
-    songList: []
+    songList: [],
+    rankingList: []
   },
 
   /**
@@ -28,6 +29,22 @@ Page({
           songList: res.result
         })
       })
+
+      // 请求排行榜信息
+      const musicArr = [2, 5, 6, 9]
+      let index = 0
+      const rankingList = []
+      while(musicArr.length > index) {
+        const ranking = {}
+        const res = await request('/top/list', {idx: musicArr[index++]})
+        if(res.code === 200) {
+          ranking.id = res.playlist.id
+          ranking.name = res.playlist.name
+          ranking.musicList = res.playlist.tracks.slice(0, 3)
+        }
+        rankingList.push(ranking)
+        this.setData({ rankingList })
+      }
   },
 
   /**
