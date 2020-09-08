@@ -1,2 +1,62 @@
-<!--pages/video/index.wxml-->
-<text>pages/video/index.wxml</text>
+<view class="videoWrap">
+  <!-- 头部 -->
+  <view class="header">
+    <image src="/static/images/video/video.jpg"></image>
+    <input type="text" placeholder="光辉岁月" placeholder-class="placeHolder" />
+    <image src="/static/images/logo.png"></image>
+  </view>
+  <!-- navbar -->
+  <view class="navbarWrap">
+    <scroll-view class="navbar" 
+      scroll-into-view="_{{currentId}}"
+      scroll-with-animation
+      enable-flex 
+      scroll-x>
+      <view wx:for="{{barList}}" 
+        wx:key="id" 
+        id="_{{item.id}}"
+        data-id="{{item.id}}"
+        catchtap="changeId"
+        class="bar-item {{currentId===item.id ? 'active' : ''}}">{{item.name}}</view>
+    </scroll-view>
+  </view>
+
+  <scroll-view 
+    class="videoList"
+    scroll-y 
+    refresher-enabled
+    bindscrolltolower="handleScrollToLower"
+    refresher-triggered="{{isRefresh}}"
+    bindrefresherrefresh="handleRefresh"
+    >
+   <view class="videoItem" wx:for="{{videoList}}" wx:key="index">
+     <video class="common" src="{{item.data.urlInfo.url}}"></video>
+    <!-- <video 
+    src="{{item.data.urlInfo.url}}"
+      class="common" 
+      id="{{item.data.vid}}"
+      poster="{{item.data.coverUrl}}"
+      wx:if="{{vid === item.data.vid}}"
+    ></video> -->
+    <!-- <image wx:else id="{{item.data.vid}}" class="common" src="{{item.data.coverUrl}}"></image> -->
+      <view class="content">{{item.data.title}}</view>
+      <view class="footer">
+        <image class="avatar" src="{{item.data.creator.avatarUrl}}"></image>
+        <text class="nickName">{{item.data.creator.nickname}}</text>
+        <view class="comments_praised">
+          <text class="item">
+            <text class="iconfont icon-buoumaotubiao15"></text>
+            <text class="count">{{item.data.praisedCount}}</text>
+          </text>
+          <text class="item">
+            <text class="iconfont icon-pinglun1"></text>
+            <text class="count">{{item.data.commentCount}}</text>
+          </text>
+          <button open-type="share" data-title="{{item.data.title}}" data-imageurl="{{item.data.coverUrl}}" class="item btn">
+            <text class="iconfont icon-gengduo"></text>
+          </button>
+        </view>
+      </view>
+   </view>
+  </scroll-view>
+</view>

@@ -44,6 +44,8 @@ Page({
 
   // 去登陆界面
   toLogin() {
+    if(this.data.profile.nickname) return void 0;
+
     wx.navigateTo({
       url: '/pages/login/index'
     })

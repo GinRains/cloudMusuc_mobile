@@ -54,7 +54,7 @@ Page({
     const {phone, password} = this.data
 
     try {
-      const res = await request('/login/cellphone', {phone, password})
+      const res = await request('/login/cellphone', {phone, password, isLogin: true})
       if(res.code === 200) {
         const {profile} = res
         wx.showToast({

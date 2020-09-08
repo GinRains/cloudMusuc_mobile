@@ -1,1 +1,126 @@
-/* pages/video/index.wxss */
+.videoWrap {
+  padding: 10rpx 10rpx 0;
+}
+
+.videoWrap .header {
+  display: flex;
+}
+
+.videoWrap .header image {
+  width: 60rpx; height: 60rpx;
+}
+
+.videoWrap .header input {
+  flex-grow: 1;
+  margin: 0 20rpx; padding-left: 16rpx;
+  height: 60rpx;
+  border: 2rpx solid #666;
+  border-radius: 10rpx;
+}
+
+.videoWrap .header input .placeHolder {
+  text-align: center;
+  color: #d43c33;
+  font-size: 30rpx;
+}
+
+.videoWrap .navbarWrap {
+  height: 100rpx; line-height: 100rpx;
+  margin-bottom: 30rpx;
+}
+
+.videoWrap .navbarWrap .navbar {
+  display: flex;
+  height: 100rpx;
+}
+
+.videoWrap .navbarWrap .navbar .bar-item {
+  margin: 0 25rpx;
+  font-size: 30rpx;
+  white-space: nowrap;
+}
+
+.videoWrap .navbarWrap .navbar .bar-item.active {
+  border-bottom: 3rpx solid #d43c33;
+}
+
+.videoList {
+  height: calc(100vh - 204rpx);
+}
+
+.videoItem {
+  padding:3%;
+  padding-bottom: 0;
+  background: #fbfbfb;
+  margin-bottom: 20rpx;
+}
+
+.videoList .common {
+  width: 100%;
+  /* height: 360rpx; */
+  height:52.875vw;
+  border-radius: 10rpx;
+}
+
+
+/* 代替video的图片 */
+/*.coverImg {*/
+  /*width: 100%;*/
+  /*height: 360rpx;*/
+  /*border-radius: 10rpx;*/
+/*}*/
+
+
+.videoList .content {
+  font-size: 26rpx;
+  height:80rpx;
+  line-height: 80rpx;
+  max-width: 500rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* footer */
+.footer {
+  border-top: 1rpx solid #eee;
+  padding: 20rpx 0;
+}
+.footer .avatar {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.footer  .nickName {
+  font-size: 26rpx;
+  vertical-align: middle;
+  margin-left: 20rpx;
+}
+
+.footer .comments_praised {
+  float: right;
+}
+
+.comments_praised .btn {
+  display: inline;
+  padding: 0;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.comments_praised .btn:after {
+  border: none;
+}
+
+.comments_praised .item {
+  margin-left: 50rpx;
+  position: relative;
+}
+
+.comments_praised .item .count {
+  position: absolute;
+  top: -20rpx;
+  font-size: 20rpx;
+}
