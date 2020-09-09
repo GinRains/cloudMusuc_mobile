@@ -1,6 +1,6 @@
 // pages/video/index.js
 import request from '../../utils/index'
-import newVideoList from '../../utils/video'
+// import newVideoList from '../../utils/video'
 
 Page({
 
@@ -11,7 +11,8 @@ Page({
     barList: [],
     videoList: [],
     currentId: 0,
-    isRefresh: false
+    isRefresh: false,
+    vid: ''
   },
 
   // 切换navbar
@@ -72,10 +73,28 @@ Page({
       icon: 'none',
       success: () => {
         this.setData({
-          videoList: [...videoList, ...newVideoList]
+          videoList: [...videoList, ...videoList]
         })
       }
     })
+  },
+  // 处理视频播放暂停逻辑
+  handlePlay(event) {
+    const vid = event.target.id
+
+    this.videoContext && vid !== this.data.vid && this.videoContext.pause()
+
+    this.videoContext = wx.createVideoContext(vid)
+    this.setData({vid})
+  },
+  // 处理图片点击，播放视频
+  handleTap(event) {
+    const {id: vid} = event.target
+
+    this.setData({vid})
+    const videoContent = wx.createVideoContext(vid)
+
+    videoContent.play()
   },
 
   /**
@@ -158,7 +177,14 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function (share) {
+    const {title, imageurl: imageUrl} = share.target.dataset
 
+    if(share.from === 'button') {
+      return {
+        title,
+        imageUrl
+      }
+    }
   }
 })

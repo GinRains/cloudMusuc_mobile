@@ -30,15 +30,18 @@
     bindrefresherrefresh="handleRefresh"
     >
    <view class="videoItem" wx:for="{{videoList}}" wx:key="index">
-     <video class="common" src="{{item.data.urlInfo.url}}"></video>
-    <!-- <video 
-    src="{{item.data.urlInfo.url}}"
+     <video 
+      id="v{{item.data.vid}}" 
       class="common" 
-      id="{{item.data.vid}}"
       poster="{{item.data.coverUrl}}"
-      wx:if="{{vid === item.data.vid}}"
-    ></video> -->
-    <!-- <image wx:else id="{{item.data.vid}}" class="common" src="{{item.data.coverUrl}}"></image> -->
+      wx:if="{{'v'+item.data.vid===vid && videoList.length > 0}}"
+      src="{{item.data.urlInfo.url}}"></video>
+    <image 
+      bindtap="handleTap" 
+      wx:else 
+      id="v{{item.data.vid}}" 
+      class="common" 
+      src="{{item.data.coverUrl}}"></image>
       <view class="content">{{item.data.title}}</view>
       <view class="footer">
         <image class="avatar" src="{{item.data.creator.avatarUrl}}"></image>

@@ -7,7 +7,7 @@
   </swiper>
   <!-- navbar -->
   <view class="navbar">
-    <view class="bar-item">
+    <view class="bar-item" catchtap="toRecommend">
       <text class="iconfont icon-meirituijian-"></text>
       <text class="barTitle">每日推荐</text>
     </view>
