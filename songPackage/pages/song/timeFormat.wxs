@@ -1,0 +1,22 @@
+function timeFormat(value) {
+  if(typeof value === 'number') {
+    value /= 1000
+    var min = Math.floor(value / 60)
+    var sec = Math.floor(value % 60)
+    if(min < 10) {
+      min = '0' + min
+    }
+    if(sec < 10) {
+      sec = '0' + sec
+    }
+
+    return min + ':' + sec;
+  }else {
+    return value
+  }
+
+}
+
+module.exports = {
+  timeFormat: timeFormat
+}

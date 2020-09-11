@@ -50,7 +50,7 @@ Page({
   // 跳转每日推荐
   toRecommend() {
     wx.navigateTo({
-      url: '/pages/recommendSong/index',
+      url: '/songPackage/pages/recommendSong/index',
     })
   },
 

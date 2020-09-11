@@ -1,11 +1,19 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/song/index",
     "pages/video/index",
     "pages/login/index",
-    "pages/personal/index",
-    "pages/recommendSong/index"
+    "pages/personal/index"
+  ],
+  "subPackages": [
+    {
+      "root": "songPackage",
+      "pages": [
+        "pages/song/index",
+        "pages/recommendSong/index"
+      ],
+      "independent": true
+    }
   ],
   "window": {
     "navigationBarBackgroundColor": "#d43c33",

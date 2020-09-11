@@ -1,0 +1,35 @@
+<wxs src="./timeFormat.wxs" module="moment" />
+
+<view class="songContainer {{isPlaying?'active':''}}">
+  <text class="singer">{{song.ar ? song.ar[0].name : '加载中...'}}</text>
+  <text class="keng"></text>
+  <image class="needle" src="/static/images/song/needle.png"></image>
+  <view class="main">
+    <image class="disc" src="/static/images/song/disc.png"></image>
+    <image class="discImg" src="{{song.al.picUrl}}"></image>
+  </view>
+
+  <!-- 进度条 -->
+  <view class="audioContainer">
+    <!-- <text>{{currentTime}}</text> -->
+    <!-- 用wxs实现 -->
+    <text>{{moment.timeFormat(currentTime)}}</text>
+    <view class="barContainer">
+      <view class="audio-current-time" style="width:{{currentProgress}}%">
+        <view class="audio-time-point"></view>
+      </view>
+    </view>
+    <!-- <text>{{durationTime}}</text> -->
+    <!-- 用wxs实现 -->
+    <text>{{moment.timeFormat(durationTime)}}</text>
+  </view>
+
+  <!-- 底部播放选项区域 -->
+  <view class="musicControl">
+    <text class="iconfont icon-iconsMusicyemianbofangmoshiShuffle" ></text>
+    <text class="iconfont icon-shangyishou" data-type="pre" bindtap="switchSong"></text>
+    <text class="iconfont {{isPlaying?'icon-zanting': 'icon-bofang'}} big" bindtap="changePlayState"></text>
+    <text class="iconfont icon-next" data-type="next" bindtap="switchSong"></text>
+    <text class="iconfont icon-iconsMusicyemianbofangmoshiPlayList"></text>
+  </view>
+</view>

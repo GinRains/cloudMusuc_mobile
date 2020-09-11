@@ -26,5 +26,9 @@ App({
    */
   onError: function (msg) {
     
+  },
+  globalData: {
+    songId: 0,
+    isPlaying: false
   }
 })
